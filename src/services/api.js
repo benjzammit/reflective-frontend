@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API || 'https://reflective-backend.herokuapp.com/api';
+const API_BASE_URL = process.env.REACT_APP_API || 'https://reflective-backend-ab1b2ca4473d.herokuapp.com/api';
 
 const API = axios.create({ baseURL: API_BASE_URL });
 

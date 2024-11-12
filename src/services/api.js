@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000/api' });
+const API_BASE_URL = process.env.REACT_APP_API || 'https://reflective-backend.herokuapp.com/api';
+
+const API = axios.create({ baseURL: API_BASE_URL });
 
 // Add token to headers if available
 API.interceptors.request.use((req) => {
@@ -15,5 +17,6 @@ export const registerUser = (data) => API.post('/auth/register', data);
 export const loginUser = (data) => API.post('/auth/login', data);
 export const submitQuestionnaire = (data) => API.post('/questionnaire', data);
 export const getQuestionnaires = () => API.get('/questionnaire');
+export const simulateDigitalTwin = (data) => API.post('/ai/simulate', data);
 
 export default API;
